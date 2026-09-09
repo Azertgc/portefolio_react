@@ -1,0 +1,17 @@
+.skills {
+  padding: 60px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.skill-chip {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  border-bottom: 1px solid var(--accent2);
+  padding-bottom: 4px;
+}

@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Ces variables sont lues par tous les fichiers .css du projet.
+   App.jsx les met à jour sur l'élément racine à chaque fois que
+   le thème choisi change dans le state React — c'est comme ça
+   qu'un simple useState() peut recolorer toute la page. */
+.app {
+  --bg: #141b26;
+  --panel: #1b2432;
+  --text: #ede7da;
+  --accent: #d9a441;
+  --accent2: #4e9e97;
+
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--accent2);
+  margin-bottom: 24px;
+}
+
+h1, h2, h3 {
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+}
