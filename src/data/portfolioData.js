@@ -7,17 +7,18 @@
 // ────────────────────────────────────────────────────────────
 
 export const greeting = {
-  name: "Ton Nom",
-  nickname: "Développeur Web",
+  name: "GONTY",
+  prenom:"Tia Ben-Emmanuel",
+  nickname: "Développeur Web Junior",
   subtitle:
     "Étudiant en L3 Techniques et Sciences de l'Informatique à l'UIST. Je construis des plateformes web avec Django et React.",
   resumeLink: "#",
 };
 
 export const socialLinks = [
-  { name: "GitHub", url: "https://github.com/ton-pseudo" },
+  { name: "GitHub", url: "https://github.com/Azertgc" },
   { name: "LinkedIn", url: "https://linkedin.com/in/ton-profil" },
-  { name: "Email", url: "mailto:toi@example.com" },
+  { name: "Email", url: "mailto:gontben3@gmail.com" },
 ];
 
 export const skills = [

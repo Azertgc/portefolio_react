@@ -48,3 +48,80 @@
   background-color: var(--accent);
   color: var(--bg);
 }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+
+  min-height: 600px;
+}
+
+/* Partie gauche */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Partie droite */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 380px;
+  height: 350px;
+
+  object-fit: cover;
+
+  
+}
+@media (max-width: 768px) {
+
+  .hero {
+    position: relative;
+
+    grid-template-columns: 1fr;
+    min-height: 600px;
+
+    padding: 60px 20px;
+
+    /* On enlève l'ancien background */
+    background-image: none;
+
+    overflow: hidden;
+  }
+
+  /* Image en arrière-plan */
+  .hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../assets/images/photo-profil.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.25;
+
+    z-index: 0;
+  }
+
+  /* Le contenu passe DEVANT l'image */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+
+    align-items: flex-start;
+  }
+
+  /* On cache l'image normale sur mobile */
+  .hero-image {
+    display: none;
+  }
+}

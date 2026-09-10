@@ -10,7 +10,9 @@ export default function Header({ activeTheme, onThemeChange }) {
         <a href="#profil">Profil</a>
         <a href="#contact">Contact</a>
       </nav>
+      
       <ThemeSwitcher activeTheme={activeTheme} onChange={onThemeChange} />
     </header>
+    
   );
 }

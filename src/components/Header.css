@@ -2,32 +2,86 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 32px;
+  padding: 14px 20px;
+  transform: translateY(15px);
+
+  /* Effet verre liquide */
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
+
+  color: black;
+  box-sizing: border-box;
 }
 
+/* Logo */
 .logo {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
+/* Navigation */
 .nav {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 28px;
 }
 
 .nav a {
+  position: relative;
+
   color: var(--text);
-  opacity: 0.7;
+  opacity: 0.65;
+
   text-decoration: none;
   font-size: 0.9rem;
-  transition: opacity 0.15s ease;
+  font-weight: 500;
+
+  transition: opacity 0.2s ease;
 }
 
 .nav a:hover {
   opacity: 1;
 }
 
+/* Petite ligne sous le lien */
+.nav a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background-color: currentColor;
+
+  transition: width 0.2s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+
+/* Mobile */
 @media (max-width: 600px) {
+
+  .header {
+    margin-top: 16px;
+    padding: 12px 16px;
+  }
+
   .nav {
     display: none;
   }
