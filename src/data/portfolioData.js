@@ -5,6 +5,18 @@
 // portfolio.js du template que tu as analysé : séparer le
 // CONTENU (ici) du CODE (dans les composants).
 // ────────────────────────────────────────────────────────────
+import bd from "../assets/images/bd.jpeg"
+import django from "../assets/images/django.jpeg"
+import git from "../assets/images/git.jpeg"
+import html from "../assets/images/html.jpeg"
+import js_2 from "../assets/images/js_2.jpeg"
+import js from "../assets/images/js.jpeg"
+import python from "../assets/images/python.jpeg"
+import react from "../assets/images/react.jpeg"
+
+
+
+
 
 export const greeting = {
   name: "GONTY",
@@ -22,8 +34,15 @@ export const socialLinks = [
 ];
 
 export const skills = [
-  "Python", "Django", "React", "React Native", "JavaScript",
-  "Tailwind CSS", "SQLite / PostgreSQL", "UML & MERISE", "Git",
+  { name: "Python", image: python },
+  { name: "Django", image: django },
+  { name: "React", image: react },
+  //{ name: "React Native", image: reactImg }, // Réutilisation de l'image React
+  { name: "JavaScript", image:js_2 }, // Autre possibilité (si dossier public)
+  //{ name: "Tailwind CSS", image: css },
+  { name: "SQLite / PostgreSQL", image: bd },
+  //{ name: "UML & MERISE", image:uml},
+  { name: "Git", image: git },
 ];
 
 // Un tableau d'objets : chaque projet est une "fiche" avec la
