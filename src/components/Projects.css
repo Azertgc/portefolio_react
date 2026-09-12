@@ -1,11 +1,18 @@
 .projects {
-  padding: 100px 24px;
+  padding: 60px 24px;
 }
+
+/* =========================
+   LAYOUT
+========================= */
 
 .projects-layout {
   display: grid;
+
   grid-template-columns: 1.1fr 0.9fr;
+
   gap: 40px;
+
   align-items: center;
 }
 
@@ -15,9 +22,12 @@
 
 .projects-carousel {
   position: relative;
+
   display: flex;
   align-items: center;
+
   gap: 12px;
+
   margin-top: 30px;
 }
 
@@ -25,12 +35,19 @@
 
 .projects-scroll {
   display: flex;
+
   gap: 20px;
+
   overflow-x: auto;
+
   scroll-behavior: smooth;
+
   scrollbar-width: none;
+
   padding: 10px 5px 20px;
+
   flex: 1;
+
   scroll-snap-type: x mandatory;
 }
 
@@ -49,9 +66,11 @@
   height: 42px;
 
   border: 1px solid rgba(255, 255, 255, 0.15);
+
   border-radius: 50%;
 
   background: rgba(255, 255, 255, 0.08);
+
   color: var(--text);
 
   font-size: 1.3rem;
@@ -66,7 +85,9 @@
 
 .carousel-arrow:hover {
   background: var(--accent);
+
   color: var(--bg);
+
   transform: scale(1.08);
 }
 
@@ -76,9 +97,12 @@
 
 .carousel-dots {
   display: flex;
+
   justify-content: center;
   align-items: center;
+
   gap: 8px;
+
   margin-top: 15px;
 }
 
@@ -89,9 +113,11 @@
   padding: 0;
 
   border: none;
+
   border-radius: 50%;
 
   background: var(--text);
+
   opacity: 0.3;
 
   cursor: pointer;
@@ -101,34 +127,44 @@
 
 .carousel-dot.active {
   width: 22px;
+
   border-radius: 10px;
+
   background: var(--accent);
+
   opacity: 1;
 }
 
 /* =========================
-   APERÇU À DROITE
+   APERÇU DESKTOP
+   IMAGE FIXE
 ========================= */
 
+.projects-right-fixed {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
 .projects-image-placeholder-fixed {
   width: 100%;
+
   max-width: 480px;
+
   height: 450px;
 
   display: flex;
+
   justify-content: center;
   align-items: center;
-
-  margin: auto;
-}
-
-.projects-right{
-  display: none;
 }
 
 .projects-image-placeholder-fixed img {
   width: 100%;
   height: 100%;
+
   object-fit: contain;
 
   transition: transform 0.4s ease;
@@ -136,6 +172,37 @@
 
 .projects-image-placeholder-fixed img:hover {
   transform: scale(1.03);
+}
+
+/* =========================
+   APERÇU MOBILE
+   IMAGE DYNAMIQUE
+========================= */
+
+.projects-right {
+  display: none;
+}
+
+.projects-image-placeholder {
+  width: 100%;
+
+  height: 350px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-image-placeholder img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.more-fixed{
+  display: none;
 }
 
 /* =========================
@@ -148,18 +215,30 @@
     grid-template-columns: 1fr;
   }
 
-  .projects-right {
-    order: -1;
-  }
-  .projects-right-fixed{
+  /* On cache l'image fixe */
+
+  .projects-right-fixed {
     display: none;
+  }
+  .more-fixed{
+    display: block;
+  }
+  /* On affiche l'image dynamique */
+
+  .projects-right {
+    display: flex;
+
+    justify-content: center;
+
+    order: -1;
   }
 
   .projects-image-placeholder {
-    height: 350px;
+    height: 230px;
   }
-  
+
 }
+
 
 /* =========================
    MOBILE
@@ -178,6 +257,7 @@
   .carousel-arrow {
     width: 35px;
     height: 35px;
+
     font-size: 1rem;
   }
 
@@ -188,7 +268,44 @@
   .projects-image-placeholder {
     height: 250px;
   }
-  .projects-right-fixed{
-    display: none;
-  }
+
+}
+/* =========================
+   BOUTON VOIR PLUS
+========================= */
+
+.projects-more {
+  display: block;
+
+  width: fit-content;
+
+  margin: 15px auto 0;
+
+  padding: 12px 22px;
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.projects-more:hover {
+  background: var(--accent);
+
+  color: var(--bg);
+
+  transform: translateY(-3px);
 }

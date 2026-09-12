@@ -2,21 +2,20 @@ import { useRef, useState } from "react";
 import { projects } from "../data/portfolioData";
 import ProjectCard from "./ProjectCard";
 import "./Projects.css";
-import projt from "../assets/images/projt.png"
+import projt from "../assets/images/projt.png";
+import { Link } from "react-router-dom";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Permet de contrôler la zone qui défile
   const scrollRef = useRef(null);
 
-  // Aller vers une carte précise
+  // Sélectionner un projet
   const selectProject = (index) => {
     setCurrentIndex(index);
     setSelectedProject(projects[index]);
 
-    // Récupère toutes les cartes
     const cards = scrollRef.current?.children;
 
     if (cards && cards[index]) {
@@ -55,14 +54,16 @@ export default function Projects() {
 
       <div className="projects-layout">
 
-        {/* GAUCHE */}
+        {/* =========================
+            GAUCHE : PROJETS
+        ========================= */}
+
         <div className="projects-left">
 
           <h2>Mes réalisations</h2>
 
           <div className="projects-carousel">
 
-            {/* Flèche gauche */}
             <button
               className="carousel-arrow"
               onClick={previousProject}
@@ -71,7 +72,6 @@ export default function Projects() {
               ←
             </button>
 
-            {/* Cartes */}
             <div
               className="projects-scroll"
               ref={scrollRef}
@@ -86,7 +86,6 @@ export default function Projects() {
               ))}
             </div>
 
-            {/* Flèche droite */}
             <button
               className="carousel-arrow"
               onClick={nextProject}
@@ -97,7 +96,8 @@ export default function Projects() {
 
           </div>
 
-          {/* Points */}
+          {/* Points du carousel */}
+
           <div className="carousel-dots">
 
             {projects.map((project, index) => (
@@ -115,7 +115,36 @@ export default function Projects() {
 
         </div>
 
-        {/* DROITE */}
+        {/* =========================
+            DROITE : DESKTOP
+            IMAGE FIXE
+        ========================= */}
+
+        <div className="projects-right-fixed">
+
+          <div className="projects-image-placeholder-fixed">
+
+            <img
+              src={projt}
+              alt="Aperçu des projets"
+            />
+
+          </div>
+
+          <Link
+            to="/projets"
+            className="projects-more"
+          >
+            Voir plus de projets →
+          </Link>
+
+        </div>
+
+        {/* =========================
+            MOBILE / TABLETTE
+            IMAGE DYNAMIQUE
+        ========================= */}
+
         <div className="projects-right">
 
           <div className="projects-image-placeholder">
@@ -128,19 +157,14 @@ export default function Projects() {
           </div>
 
         </div>
-        <div className="projects-right-fixed">
-
-          <div className="projects-image-placeholder-fixed">
-
-            <img
-              src={projt}
-              alt=""
-            />
-
+          <div className="more-fixed">
+            <Link
+            to="/projets"
+            className="projects-more"
+          >
+            Voir plus de projets →
+          </Link>
           </div>
-
-        </div>
-
       </div>
 
     </section>
