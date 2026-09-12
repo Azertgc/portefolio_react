@@ -5,6 +5,14 @@
   padding: 14px 20px;
   transform: translateY(15px);
 
+  /*position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% - 40px);
+  max-width: 1200px;*/
+
   /* Effet verre liquide */
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(15px);
@@ -27,6 +35,27 @@
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.5px;
+  position: relative;
+
+  color: var(--text);
+  opacity: 1;
+
+  font-size: 0.999rem;
+  font-weight: 400px;
+
+  transition: opacity 0.2s ease;
+  color: rgba(0, 0, 0, 0.883);
+  
+}
+.back-home {
+  text-decoration: none;
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--accent);
+  opacity: 1;
 }
 
 /* Navigation */
@@ -47,6 +76,12 @@
   font-weight: 500;
 
   transition: opacity 0.2s ease;
+}
+
+
+span a:hover {
+  opacity: 1;
+
 }
 
 .nav a:hover {

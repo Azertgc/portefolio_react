@@ -1,0 +1,50 @@
+.all-projects {
+  padding: 50px 24px 100px;
+  min-height: 100vh;
+  
+}
+
+.all-projects-heading {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.all-projects-heading h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 10px 0 20px;
+}
+
+.all-projects-heading p:last-child {
+  color: var(--text);
+  opacity: 0.7;
+  line-height: 1.7;
+}
+
+.all-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* On remet les cartes à une taille normale
+   puisqu'elles étaient prévues pour le carousel */
+.all-projects-grid .project-card {
+  width: 100%;
+  flex: none;
+}
+
+@media (max-width: 900px) {
+  .all-projects-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .all-projects {
+    padding: 120px 20px 70px;
+  }
+
+  .all-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

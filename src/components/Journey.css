@@ -1,0 +1,95 @@
+.journey {
+  padding: 100px 24px;
+}
+
+.journey-timeline {
+  max-width: 900px;
+  margin: 60px auto 0;
+}
+
+.journey-item {
+  display: grid;
+  grid-template-columns: 130px 30px 1fr;
+  gap: 20px;
+  position: relative;
+  min-height: 130px;
+  margin-bottom: 10px;
+}
+
+.journey-year {
+  text-align: right;
+  color: var(--accent);
+  font-weight: 600;
+  padding-top: 5px;
+}
+
+.journey-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-top: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.journey-item:not(:last-child) .journey-dot::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 5px;
+  width: 2px;
+  height: 130px;
+  background: var(--accent);
+  opacity: 0.3;
+}
+
+.journey-content {
+  padding: 0 25px 30px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.journey-content h3 {
+  margin: 20px 0 10px;
+}
+
+.journey-content p {
+  color: var(--text);
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .journey {
+    padding: 70px 20px;
+  }
+
+  .journey-item {
+    grid-template-columns: 25px 1fr;
+    gap: 15px;
+  }
+
+  .journey-year {
+    grid-column: 2;
+    text-align: left;
+    padding: 0;
+  }
+
+  .journey-dot {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .journey-content {
+    grid-column: 2;
+    padding: 0 20px 20px;
+  }
+}

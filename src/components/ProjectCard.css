@@ -1,52 +1,67 @@
 .project-card {
-  flex: 0 0 260px;
-
-  padding: 15px;
-
-  /* Glassmorphism */
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 20px;
-
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.08),
-    inset 0 1px 1px rgba(255, 255, 255, 0.5);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.12),
-    inset 0 1px 1px rgba(255, 255, 255, 0.7);
-}
-
-
-/* =========================
-   IMAGE
-========================= */
-
-.project-image {
-  width: 100%;
-  height: 160px;
+  flex: 0 0 280px;
+  scroll-snap-align: center;
+  height: 350px;
+  
 
   overflow: hidden;
 
-  border-radius: 15px;
+  border-radius: 20px;
 
-  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  cursor: pointer;
 
-  margin-bottom: 18px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
 }
 
-.project-image img {
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Carte sélectionnée */
+
+.project-card.active {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+/* Image */
+
+.project-card-image {
+  width: 100%;
+  height: 170px;
+
+  overflow: hidden;
+    flex: 0 0 280px;
+  scroll-snap-align: center;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card-image img {
   width: 100%;
   height: 100%;
 
@@ -55,45 +70,76 @@
   transition: transform 0.4s ease;
 }
 
-.project-card:hover .project-image img {
+.project-card:hover .project-card-image img {
   transform: scale(1.05);
 }
 
+/* Contenu */
 
-/* =========================
-   CONTENU
-========================= */
-
-.project-content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.project-card-content {
+  padding: 20px;
 }
 
-
-/* Numéro du projet */
-
-.project-index {
+.project-card-tag {
   font-size: 0.75rem;
-  opacity: 0.5;
+
+  color: var(--accent);
+
+  font-weight: 600;
 }
 
+.project-card-content h3 {
+  margin: 8px 0 10px;
 
-/* Nom */
+  font-size: 1.3rem;
+}
 
-.project-content h3 {
-  font-size: 1.15rem;
+.project-card-content p {
   margin: 0;
-}
 
-
-/* Description */
-
-.project-content p {
-  font-size: 0.85rem;
-  line-height: 1.5;
+  color: var(--text);
 
   opacity: 0.7;
 
+  font-size: 0.85rem;
+
+  line-height: 1.5;
+}
+
+/* Technologies */
+
+.project-card-stack {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+ 
+}
+
+.project-card-stack span {
+  padding: 5px 9px;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 0.7rem;
+
+  opacity: 0.8;
+}
+
+.project-card hr {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
   margin: 0;
+  border: none;
+
+  background: var(--accent);
 }

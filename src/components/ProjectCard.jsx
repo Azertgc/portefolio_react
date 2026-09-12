@@ -1,21 +1,50 @@
-export default function ProjectCard({ project }) {
-  return (
-    <article className="project-card">
+import "./ProjectCard.css";
+import { Link } from "react-router-dom";
+import "./ProjectCard.css";
 
-      {/* Image */}
+
+export default function ProjectCard({
+  project,
+  onSelect,
+  isActive
+}) {
+  return (
+    <article
+      className={`project-card ${isActive ? "active" : ""}`}
+      onClick={onSelect}
+    >
+      {/* Image du projet */}
       <div className="project-card-image">
         <img
           src={project.image}
-          alt={project.title}
+          alt={project.name}
         />
       </div>
 
-      {/* Nom */}
-      <h3>{project.title}</h3>
+      {/* Informations */}
+      <div className="project-card-content">
 
-      {/* Description */}
-      <p>{project.description}</p>
+        <span className="project-card-tag">
+          {project.tag}
+        </span>
 
+        <h3>{project.name}</h3>
+
+        
+
+        {/* Technologies */}
+        <div className="project-card-stack">
+          {project.stack.map((technology) => (
+            <span key={technology}>
+              {technology}
+            </span>
+          ))}
+        </div>
+
+      </div>
+      <hr />
     </article>
   );
 }
+
+/* ajout de lien git apres*/

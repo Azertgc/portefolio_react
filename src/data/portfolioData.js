@@ -54,27 +54,32 @@ export const projects = [
     name: "UIST GESTION",
     tag: "Projet de fin de cycle",
     period: "2024 — 2025",
+    image: "/src/assets/images/projt.png",
     description:
-      "Plateforme institutionnelle Django pour piloter des prestataires de services externes : quatre rôles utilisateurs, formule de scoring pour comparer les offres, suivi documentaire.",
+      "Application web de gestion des prestataires et des prestations pour l'UIST.",
     stack: ["Django", "Python", "Tailwind CSS", "SQLite"],
   },
+
   {
     id: 2,
     name: "Code de la route",
     tag: "Application mobile",
     period: "2025",
+    image: "/src/assets/images/1000594281-removebg-preview.png",
     description:
-      "Application Android hors-ligne pour réviser le code de la route : plus de 30 leçons, système de quiz et d'examen blanc, suivi de progression, thème clair/sombre.",
-    stack: ["React Native", "Expo", "EAS Build"],
+      "Application mobile permettant de réviser le code de la route grâce à des leçons et des quiz.",
+    stack: ["React Native", "Expo", "JavaScript"],
   },
+
   {
     id: 3,
     name: "AVODAH",
     tag: "Marketplace de services",
     period: "2023 — 2024",
+    image: "/src/assets/images/stack.png",
     description:
-      "Marketplace mettant en relation clients et prestataires à Abidjan, avant sa transformation en outil de gestion institutionnelle (UIST GESTION).",
-    stack: ["Django 4.2", "PostgreSQL", "Tailwind CSS"],
+      "Plateforme web de mise en relation entre clients et prestataires de services.",
+    stack: ["Django", "Python", "PostgreSQL", "Tailwind CSS"],
   },
 ];
 
@@ -86,3 +91,97 @@ export const themes = {
   ocean: { name: "Océan", bg: "#EDF9FE", panel: "#FFFFFF", text: "#001C55", accent: "#0E6BA8", accent2: "#A6E1FA" },
   foret: { name: "Forêt", bg: "#FFFFEB", panel: "#FFFFFF", text: "#003F2F", accent: "#55A630", accent2: "#dddf00" },
 };
+
+export const stats = [
+  {
+    value: "L3",
+    label: "Informatique",
+  },
+  {
+    value: "3",
+    label: "Projets réalisés",
+  },
+  {
+    value: "8",
+    label: "Technologies",
+  },
+  {
+    value: "2+",
+    label: "Années de pratique",
+  },
+];
+
+export const about = {
+  title: "À propos de moi",
+  description:
+    "Je suis étudiant en informatique et développeur web junior. Je m'intéresse particulièrement à la conception d'applications web modernes et aux technologies permettant de créer des solutions utiles et évolutives.",
+  vision:
+    "Mon objectif est de continuer à développer mes compétences en ingénierie logicielle et de concevoir des applications fiables, simples à utiliser et adaptées aux besoins réels.",
+};
+
+
+export const expertise = [
+  {
+    icon: "💻",
+    title: "Frontend",
+    level: 75,
+    description: "Création d'interfaces web modernes et responsives.",
+  },
+  {
+    icon: "⚙️",
+    title: "Backend",
+    level: 85,
+    description: "Développement d'applications avec Python et Django.",
+  },
+  {
+    icon: "🔌",
+    title: "API",
+    level: 75,
+    description: "Création et utilisation d'API pour connecter les applications.",
+  },
+  {
+    icon: "🗄️",
+    title: "Bases de données",
+    level: 80,
+    description: "Conception et gestion de bases de données SQL.",
+  },
+  {
+    icon: "🚀",
+    title: "Déploiement",
+    level: 65,
+    description: "Mise en ligne et configuration des applications web.",
+  },
+];
+
+export const journey = [
+  {
+    year: "2023",
+    title: "Début dans le développement",
+    description:
+      "Découverte de la programmation et développement de mes premières applications web.",
+  },
+  {
+    year: "2023 — 2024",
+    title: "AVODAH",
+    description:
+      "Conception d'une plateforme web de mise en relation entre clients et prestataires de services.",
+  },
+  {
+    year: "2024 — 2025",
+    title: "UIST GESTION",
+    description:
+      "Conception et réalisation d'une application web de gestion des prestataires et des prestations pour l'UIST.",
+  },
+  {
+    year: "2025 — 2026",
+    title: "Développement Full Stack",
+    description:
+      "Approfondissement de Python, Django, JavaScript, React, bases de données, Git et déploiement.",
+  },
+  {
+    year: "Aujourd'hui",
+    title: "Développeur Web Junior",
+    description:
+      "Je continue à développer mes compétences en développement Full Stack et à construire des projets personnels.",
+  },
+];

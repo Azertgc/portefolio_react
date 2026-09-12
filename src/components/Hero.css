@@ -125,3 +125,26 @@
     display: none;
   }
 }
+.hero-name {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  margin: 5px 0 0;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-cta-secondary {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.hero-cta-secondary:hover {
+  background-color: var(--text);
+  color: var(--bg);
+}

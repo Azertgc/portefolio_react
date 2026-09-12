@@ -130,6 +130,7 @@
   .profile-photo img {
     width: 260px;
     height: 320px;
+    display: none;
   }
 
   .skills-content h2 {
