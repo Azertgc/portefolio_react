@@ -228,6 +228,7 @@
 ========================= */
 
 @media (max-width: 900px) {
+
   .projects {
     padding: 70px 20px;
     height: 80%;
@@ -237,28 +238,25 @@
     grid-template-columns: 1fr;
   }
 
-  /* On cache l'image fixe */
-
   .projects-right-fixed {
     display: none;
   }
-  .more-fixed{
+
+  .more-fixed {
     display: block;
   }
-  /* On affiche l'image dynamique */
 
   .projects-right {
     display: flex;
-
     justify-content: center;
-
     order: -1;
+    margin-bottom: 25px;
   }
 
   .projects-image-placeholder {
-    height: 230px;
+    height: 300px;
+    max-width: 600px;
   }
-
 }
 
 
@@ -280,7 +278,6 @@
   .carousel-arrow {
     width: 35px;
     height: 35px;
-
     font-size: 1rem;
   }
 
@@ -288,10 +285,40 @@
     gap: 12px;
   }
 
-  .projects-image-placeholder {
-    height: 250px;
+  .projects-right {
+    margin-bottom: 20px;
   }
 
+  .projects-image-placeholder {
+    width: 100%;
+    height: 230px;
+
+    padding: 15px;
+
+    border-radius: 22px;
+  }
+
+  .projects-image-placeholder img {
+    border-radius: 14px;
+  }
+}
+
+
+/* =========================
+   PETIT MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+  .projects-image-placeholder {
+    height: 200px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .projects-image-placeholder img {
+    border-radius: 12px;
+  }
 }
 /* =========================
    BOUTON VOIR PLUS

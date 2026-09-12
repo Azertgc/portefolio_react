@@ -18,14 +18,21 @@ import react from "../assets/images/react.jpeg"
 
 
 
+
 export const greeting = {
   name: "GONTY",
-  prenom:"Tia Ben-Emmanuel",
+
+  prenom: "Tia Ben-Emmanuel",
+
   nickname: "Développeur Web Junior",
+
   subtitle:
-    "Étudiant en L3 Techniques et Sciences de l'Informatique à l'UIST. Je construis des plateformes web avec Django et React.",
+    "Développeur web passionné par la création d'applications modernes, fonctionnelles et intuitives. Je conçois des solutions web avec Django, React et JavaScript, en mettant l'accent sur la qualité, la simplicité et l'expérience utilisateur.",
+
   resumeLink: "#",
 };
+
+
 
 export const socialLinks = [
   { name: "GitHub", url: "https://github.com/Azertgc" },
@@ -54,32 +61,71 @@ export const projects = [
     name: "UIST GESTION",
     tag: "Projet de fin de cycle",
     period: "2024 — 2025",
-    image: "/src/assets/images/projt.png",
+    image: "/src/assets/images/uistg.png",
     description:
       "Application web de gestion des prestataires et des prestations pour l'UIST.",
     stack: ["Django", "Python", "Tailwind CSS", "SQLite"],
+    repo: "https://github.com/Azertgc/uist_gestion",
   },
 
   {
     id: 2,
-    name: "Code de la route",
-    tag: "Application mobile",
-    period: "2025",
-    image: "/src/assets/images/1000594281-removebg-preview.png",
+    name: "AVODAH",
+    tag: "Marketplace de services",
+    period: "2023 — 2024",
+    image: "/src/assets/images/stackA.png",
     description:
-      "Application mobile permettant de réviser le code de la route grâce à des leçons et des quiz.",
-    stack: ["React Native", "Expo", "JavaScript"],
+      "Plateforme de services domestiques à Abidjan mettant en relation clients et prestataires.",
+    stack: ["Django", "Python", "MySQL", "HTML/CSS"],
+    repo: "https://github.com/Azertgc/avodah_plateforme_complete",
   },
 
   {
     id: 3,
-    name: "AVODAH",
-    tag: "Marketplace de services",
-    period: "2023 — 2024",
-    image: "/src/assets/images/stack.png",
+    name: "ClinicYave",
+    tag: "Application médicale",
+    period: "2025 — 2026",
+    image: "/src/assets/images/clinicyave.png",
     description:
-      "Plateforme web de mise en relation entre clients et prestataires de services.",
-    stack: ["Django", "Python", "PostgreSQL", "Tailwind CSS"],
+      "Application de gestion médicale construite avec Vue 3, Vite et Tailwind CSS.",
+    stack: ["Vue 3", "Vite", "Tailwind CSS", "JavaScript"],
+    repo: "https://github.com/Azertgc/ClinicYave",
+  },
+
+  {
+    id: 4,
+    name: "Météo App",
+    tag: "Application mobile",
+    period: "2025 — 2026",
+    image: "/src/assets/images/meteo.png",
+    description:
+      "Application météo Flutter permettant de rechercher une ville et d'afficher les conditions en temps réel, avec un thème visuel adaptatif.",
+    stack: ["Flutter", "Dart"],
+    repo: "https://github.com/Azertgc/flutter-app-meteo",
+  },
+
+  {
+    id: 5,
+    name: "Ionic Todo App",
+    tag: "Application mobile",
+    period: "2025 — 2026",
+    image: "/src/assets/images/todo.png",
+    description:
+      "Application mobile de gestion de tâches, développée avec Ionic, Angular et Capacitor sur une architecture standalone.",
+    stack: ["Ionic", "Angular", "TypeScript", "Capacitor"],
+    repo: "https://github.com/Azertgc/ionic-todo-app",
+  },
+
+  {
+    id: 6,
+    name: "Flask Admin",
+    tag: "Panel d'administration",
+    period: "2025",
+    image: "/src/assets/images/flask.png",
+    description:
+      "Interface d'administration web développée avec Flask, HTML et CSS.",
+    stack: ["Flask", "Python", "HTML", "CSS"],
+    repo: "https://github.com/Azertgc/Projet_flask_admin",
   },
 ];
 

@@ -1,24 +1,24 @@
+/* ==================================================
+   HEADER
+================================================== */
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 14px 20px;
-  transform: translateY(15px);
 
-  /*position: fixed;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 15px;
 
-  width: calc(100% - 40px);
-  max-width: 1200px;*/
-
-  /* Effet verre liquide */
+  /* Effet verre */
   background: rgba(255, 255, 255, 0.18);
+
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 
   border: 1px solid rgba(255, 255, 255, 0.35);
+
   border-radius: 18px;
 
   box-shadow:
@@ -26,45 +26,64 @@
     inset 0 1px 1px rgba(255, 255, 255, 0.5);
 
   color: black;
+
   box-sizing: border-box;
-    position: relative;
-  z-index: 1000;
 
-}
-
-/* Logo */
-.logo {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  /* Permet au menu de passer au-dessus */
   position: relative;
 
-  color: var(--text);
-  opacity: 1;
-
-  font-size: 0.999rem;
-  font-weight: 400px;
-
-  transition: opacity 0.2s ease;
-  color: rgba(0, 0, 0, 0.883);
-  
+  z-index: 99999;
 }
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
 .back-home {
   text-decoration: none;
+
   opacity: 0.7;
+
   transition: 0.3s ease;
+
+  flex-shrink: 0;
+}
+
+.back-home:hover {
+  opacity: 1;
+}
+
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  letter-spacing: -0.5px;
+
+  color: rgba(0, 0, 0, 0.883);
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .logo:hover {
   color: var(--accent);
-  opacity: 1;
 }
 
-/* Navigation */
+
+/* ==================================================
+   NAVIGATION DESKTOP
+================================================== */
+
 .nav {
   display: flex;
+
   align-items: center;
+
   gap: 28px;
 }
 
@@ -72,34 +91,36 @@
   position: relative;
 
   color: var(--text);
+
   opacity: 0.65;
 
   text-decoration: none;
+
   font-size: 0.9rem;
+
   font-weight: 500;
 
   transition: opacity 0.2s ease;
-}
-
-
-span a:hover {
-  opacity: 1;
-
 }
 
 .nav a:hover {
   opacity: 1;
 }
 
-/* Petite ligne sous le lien */
+
+/* Ligne sous les liens */
+
 .nav a::after {
   content: "";
 
   position: absolute;
+
   left: 0;
+
   bottom: -6px;
 
   width: 0;
+
   height: 2px;
 
   background-color: currentColor;
@@ -112,14 +133,15 @@ span a:hover {
 }
 
 
-/* =========================
+/* ==================================================
    BOUTON HAMBURGER
-========================= */
+================================================== */
 
 .menu-button {
   display: none;
 
   border: none;
+
   background: transparent;
 
   color: var(--text);
@@ -130,127 +152,213 @@ span a:hover {
 
   padding: 5px;
 
-  z-index: 1002;
+  line-height: 1;
+
+  z-index: 1000000;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menu-button:hover {
+  color: var(--accent);
+
+  transform: scale(1.05);
 }
 
 
-/* =========================
+/* ==================================================
    MENU MOBILE
-========================= */
+================================================== */
 
 .mobile-menu {
   position: absolute;
-  z-index: 9999;
+
+  top: calc(100% + 10px);
+
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  /* Couleur du menu */
+  background-color: var(--accent);
+
+  /* Effet verre */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.20),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+
+  /* État fermé */
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(-10px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+
+  /* Au-dessus des autres éléments */
+  z-index: 999999;
 }
 
 
-/* =========================
+/* ==================================================
+   MENU MOBILE OUVERT
+================================================== */
+
+.mobile-menu.open {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+
+  z-index: 999999;
+}
+
+
+/* ==================================================
+   LIENS DU MENU MOBILE
+================================================== */
+
+.mobile-menu a {
+  display: block;
+
+  padding: 13px 15px;
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+
+  font-weight: 500;
+
+  border-radius: 10px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255, 255, 255, 0.15);
+
+  color: var(--text);
+
+  transform: translateX(4px);
+}
+
+
+/* ==================================================
+   TABLETTE
+================================================== */
+
+@media (max-width: 900px) {
+
+  .header {
+    padding: 13px 18px;
+  }
+
+}
+
+
+/* ==================================================
    MOBILE
-========================= */
+================================================== */
 
 @media (max-width: 600px) {
 
   .header {
     margin-top: 16px;
+
     padding: 12px 16px;
 
+    width: calc(100% - 30px);
+
+    margin-left: auto;
+
+    margin-right: auto;
+
     position: relative;
+
+    z-index: 99999;
   }
 
-  /* On cache la navigation normale */
+
+  /* Navigation desktop cachée */
+
   .nav {
     display: none;
   }
 
-  /* On affiche le hamburger */
+
+  /* Hamburger visible */
+
   .menu-button {
     display: block;
   }
 
-  /* =========================
-     MENU DÉROULANT
-  ========================= */
+
+  /* Menu mobile */
 
   .mobile-menu {
-    position: absolute;
-
     top: calc(100% + 10px);
+
     left: 0;
 
     width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-
-    padding: 12px;
-
-    box-sizing: border-box;
-
-    background: rgba(255, 255, 255, 0.18);
-
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    border: 1px solid rgba(255, 255, 255, 0.35);
-
-    border-radius: 15px;
-
-    box-shadow:
-      0 8px 30px rgba(0, 0, 0, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.5);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform: translateY(-10px);
-
-    transition:
-      opacity 0.25s ease,
-      transform 0.25s ease,
-      visibility 0.25s ease;
-
-    z-index: 1001;
   }
 
-
-  /* Menu ouvert */
-
-.mobile-menu.open {
-  opacity: 1;
-  background-color: var(--accent);
-  visibility: visible;
-  transform: translateY(0);
-  z-index: 9999;
 }
 
 
-  /* Liens */
+/* ==================================================
+   PETITS TÉLÉPHONES
+================================================== */
 
-  .mobile-menu a {
-    display: block;
+@media (max-width: 380px) {
 
-    padding: 13px 15px;
+  .header {
+    width: calc(100% - 20px);
 
-    color: var(--text);
-
-    text-decoration: none;
-
-    font-size: 0.9rem;
-
-    border-radius: 10px;
-
-    transition: 0.2s ease;
+    padding: 11px 14px;
   }
 
+  .logo {
+    font-size: 0.95rem;
+  }
 
-  .mobile-menu a:hover {
-    background: rgba(255, 255, 255, 0.15);
+  .menu-button {
+    font-size: 1.4rem;
+  }
 
-    color: var(--accent);
+  .mobile-menu a {
+    padding: 12px 14px;
+
+    font-size: 0.85rem;
   }
 
 }

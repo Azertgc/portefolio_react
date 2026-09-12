@@ -6,53 +6,93 @@ import projt from "../assets/images/projt.png";
 import { Link } from "react-router-dom";
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(projects[0]);
+
+  // On affiche seulement les 3 premiers projets
+  const displayedProjects = projects.slice(0, 3);
+
+  // Projet actuellement sélectionné
+  const [selectedProject, setSelectedProject] = useState(
+    displayedProjects[0]
+  );
+
+  // Index du projet actuellement sélectionné
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const scrollRef = useRef(null);
 
-  // Sélectionner un projet
+
+  // =========================
+  // SÉLECTIONNER UN PROJET
+  // =========================
+
   const selectProject = (index) => {
+
     setCurrentIndex(index);
-    setSelectedProject(projects[index]);
+
+    setSelectedProject(displayedProjects[index]);
 
     const cards = scrollRef.current?.children;
 
     if (cards && cards[index]) {
+
       cards[index].scrollIntoView({
         behavior: "smooth",
         block: "nearest",
         inline: "center",
       });
+
     }
   };
 
-  // Projet précédent
+
+  // =========================
+  // PROJET PRÉCÉDENT
+  // =========================
+
   const previousProject = () => {
+
     const newIndex =
       currentIndex === 0
-        ? projects.length - 1
+        ? displayedProjects.length - 1
         : currentIndex - 1;
 
     selectProject(newIndex);
   };
 
-  // Projet suivant
+
+  // =========================
+  // PROJET SUIVANT
+  // =========================
+
   const nextProject = () => {
+
     const newIndex =
-      currentIndex === projects.length - 1
+      currentIndex === displayedProjects.length - 1
         ? 0
         : currentIndex + 1;
 
     selectProject(newIndex);
   };
 
-  return (
-    <section id="projets" className="container projects">
 
-      <p className="section-label">PROJETS</p>
+  return (
+
+    <section
+      id="projets"
+      className="container projects"
+    >
+
+      {/* =========================
+          TITRE
+      ========================= */}
+
+      <p className="section-label">
+        PROJETS
+      </p>
+
 
       <div className="projects-layout">
+
 
         {/* =========================
             GAUCHE : PROJETS
@@ -60,9 +100,17 @@ export default function Projects() {
 
         <div className="projects-left">
 
-          <h2>Mes réalisations</h2>
+          <h2>
+            Mes réalisations
+          </h2>
+
+
+          {/* CAROUSEL */}
 
           <div className="projects-carousel">
+
+
+            {/* PROJET PRÉCÉDENT */}
 
             <button
               className="carousel-arrow"
@@ -72,19 +120,35 @@ export default function Projects() {
               ←
             </button>
 
+
+            {/* LISTE DES PROJETS */}
+
             <div
               className="projects-scroll"
               ref={scrollRef}
             >
-              {projects.map((project, index) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onSelect={() => selectProject(index)}
-                  isActive={index === currentIndex}
-                />
-              ))}
+
+              {displayedProjects.map(
+                (project, index) => (
+
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    onSelect={() =>
+                      selectProject(index)
+                    }
+                    isActive={
+                      index === currentIndex
+                    }
+                  />
+
+                )
+              )}
+
             </div>
+
+
+            {/* PROJET SUIVANT */}
 
             <button
               className="carousel-arrow"
@@ -96,27 +160,41 @@ export default function Projects() {
 
           </div>
 
-          {/* Points du carousel */}
+
+          {/* =========================
+              POINTS
+          ========================= */}
 
           <div className="carousel-dots">
 
-            {projects.map((project, index) => (
-              <button
-                key={project.id}
-                className={`carousel-dot ${
-                  index === currentIndex ? "active" : ""
-                }`}
-                onClick={() => selectProject(index)}
-                aria-label={`Afficher le projet ${index + 1}`}
-              />
-            ))}
+            {displayedProjects.map(
+              (project, index) => (
+
+                <button
+                  key={project.id}
+                  className={`carousel-dot ${
+                    index === currentIndex
+                      ? "active"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    selectProject(index)
+                  }
+                  aria-label={`Afficher le projet ${
+                    index + 1
+                  }`}
+                />
+
+              )
+            )}
 
           </div>
 
         </div>
 
+
         {/* =========================
-            DROITE : DESKTOP
+            DESKTOP
             IMAGE FIXE
         ========================= */}
 
@@ -131,6 +209,9 @@ export default function Projects() {
 
           </div>
 
+
+          {/* BOUTON DESKTOP */}
+
           <Link
             to="/projets"
             className="projects-more"
@@ -139,6 +220,7 @@ export default function Projects() {
           </Link>
 
         </div>
+
 
         {/* =========================
             MOBILE / TABLETTE
@@ -157,16 +239,27 @@ export default function Projects() {
           </div>
 
         </div>
-          <div className="more-fixed">
-            <Link
+
+
+        {/* =========================
+            BOUTON MOBILE
+        ========================= */}
+
+        <div className="more-fixed">
+
+          <Link
             to="/projets"
             className="projects-more"
           >
             Voir plus de projets →
           </Link>
-          </div>
+
+        </div>
+
+
       </div>
 
     </section>
+
   );
 }

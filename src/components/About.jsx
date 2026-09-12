@@ -15,9 +15,7 @@ export default function About() {
         <h2>Qui suis-je ?</h2>
 
         <p>
-          Je suis Gonty Tia Ben-Emmanuel, étudiant en Licence 3
-          Informatique, spécialisé dans le développement d'applications
-          web et mobile.
+          Je suis Gonty Tia Ben-Emmanuel, diplômé en Informatique, spécialisé dans le développement d'applications web et mobile. Je conçois des solutions web modernes en utilisant notamment Django, React et JavaScript.
         </p>
 
         <p>
