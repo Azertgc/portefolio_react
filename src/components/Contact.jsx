@@ -1,5 +1,7 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { socialLinks } from "../data/portfolioData";
+import Reveal from "./Reveal";
 import "./Contact.css";
 import contact from "../assets/images/contact.png";
 
@@ -28,19 +30,42 @@ export default function Contact() {
   };
 
   // Cette fonction est appelée lorsqu'on clique sur "Envoyer"
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    setStatus("Merci pour votre message ! Je vous répondrai bientôt.");
+  setStatus("Envoi en cours...");
 
-    // On vide le formulaire
+  try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        description: formData.description,
+    },
+    {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    }
+   );
+
+    setStatus("Message envoyé avec succès ! Je vous répondrai bientôt.");
+
     setFormData({
       name: "",
       email: "",
       phone: "",
       description: "",
     });
-  };
+  } catch (error) {
+    console.error("Erreur EmailJS :", error);
+
+    setStatus(
+      "Une erreur est survenue. Veuillez réessayer ou me contacter sur WhatsApp."
+    );
+  }
+};
 
   return (
     <section id="contact" className="container contact">
@@ -59,48 +84,52 @@ export default function Contact() {
 
         <div className="contact-left">
 
-          <div className="contact-image">
+          <Reveal direction="bottom" delay={0} className="contact-image">
             <div className="contact-image-placeholder">
               <img
                 src={contact}
                 alt="Illustration contact"
               />
             </div>
-          </div>
+          </Reveal>
 
           <div className="contact-links">
 
             {/* WHATSAPP */}
-            <a
-              href="https://wa.me/2250501075694"
-              target="_blank"
-              rel="noreferrer"
-              className="contact-glass"
-            >
-              <span className="contact-icon">☏</span>
+            <Reveal direction="bottom" delay={0.15}>
+              <a
+                href="https://wa.me/2250501075694"
+                target="_blank"
+                rel="noreferrer"
+                className="contact-glass"
+              >
+                <span className="contact-icon">☏</span>
 
-              <div>
-                <strong>WhatsApp</strong>
-                <small>Discutons directement</small>
-              </div>
-            </a>
+                <div>
+                  <strong>WhatsApp</strong>
+                  <small>Discutons directement</small>
+                </div>
+              </a>
+            </Reveal>
 
             {/* EMAIL */}
             {email && (
-              <a
-                href={email.url}
-                className="contact-glass"
-              >
-                <span className="contact-icon">✉</span>
+              <Reveal direction="bottom" delay={0.3}>
+                <a
+                  href={email.url}
+                  className="contact-glass"
+                >
+                  <span className="contact-icon">✉</span>
 
-                <div>
-                  <strong>Email</strong>
+                  <div>
+                    <strong>Email</strong>
 
-                  <small>
-                    {email.url.replace("mailto:", "")}
-                  </small>
-                </div>
-              </a>
+                    <small>
+                      {email.url.replace("mailto:", "")}
+                    </small>
+                  </div>
+                </a>
+              </Reveal>
             )}
 
           </div>
@@ -111,102 +140,105 @@ export default function Contact() {
             DROITE : FORMULAIRE
         ========================= */}
 
-        <form
+        <Reveal
+          as="form"
+          direction="bottom"
+          delay={0.45}
           className="contact-form"
           onSubmit={handleSubmit}
         >
 
-          {/* NOM */}
-          <div className="form-group">
+            {/* NOM */}
+            <div className="form-group">
 
-            <label htmlFor="name">
-              Votre nom
-            </label>
+              <label htmlFor="name">
+                Votre nom
+              </label>
 
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Entrez votre nom"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Entrez votre nom"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
 
-          </div>
+            </div>
 
-          {/* EMAIL */}
-          <div className="form-group">
+            {/* EMAIL */}
+            <div className="form-group">
 
-            <label htmlFor="email">
-              Email de contact
-            </label>
+              <label htmlFor="email">
+                Email de contact
+              </label>
 
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="exemple@email.com"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemple@email.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
 
-          </div>
+            </div>
 
-          {/* TELEPHONE */}
-          <div className="form-group">
+            {/* TELEPHONE */}
+            <div className="form-group">
 
-            <label htmlFor="phone">
-              Numéro de téléphone
-            </label>
+              <label htmlFor="phone">
+                Numéro de téléphone
+              </label>
 
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="+225 07 00 00 00 00"
-              value={formData.phone}
-              onChange={handleChange}
-            />
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+225 07 00 00 00 00"
+                value={formData.phone}
+                onChange={handleChange}
+              />
 
-          </div>
+            </div>
 
-          {/* DESCRIPTION */}
-          <div className="form-group">
+            {/* DESCRIPTION */}
+            <div className="form-group">
 
-            <label htmlFor="description">
-              Description du projet
-            </label>
+              <label htmlFor="description">
+                Description du projet
+              </label>
 
-            <textarea
-              id="description"
-              name="description"
-              rows="6"
-              placeholder="Décrivez brièvement votre projet..."
-              value={formData.description}
-              onChange={handleChange}
-              required
-            ></textarea>
+              <textarea
+                id="description"
+                name="description"
+                rows="6"
+                placeholder="Décrivez brièvement votre projet..."
+                value={formData.description}
+                onChange={handleChange}
+                required
+              ></textarea>
 
-          </div>
+            </div>
 
-          {/* MESSAGE DE SUCCÈS */}
-          {status && (
-            <p className="contact-success">
-              {status}
-            </p>
-          )}
+            {/* MESSAGE DE SUCCÈS */}
+            {status && (
+              <p className="contact-success">
+                {status}
+              </p>
+            )}
 
-          {/* BOUTON */}
-          <button
-            type="submit"
-            className="contact-submit"
-          >
-            Envoyer
-          </button>
+            {/* BOUTON */}
+            <button
+              type="submit"
+              className="contact-submit"
+            >
+              Envoyer
+            </button>
 
-        </form>
+        </Reveal>
 
       </div>
 

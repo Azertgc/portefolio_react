@@ -1,4 +1,5 @@
 import { journey } from "../data/portfolioData";
+import Reveal from "./Reveal";
 import "./Journey.css";
 
 export default function Journey() {
@@ -17,7 +18,12 @@ export default function Journey() {
 
       <div className="journey-timeline">
         {journey.map((item, index) => (
-          <div className="journey-item" key={index}>
+          <Reveal
+            key={index}
+            direction={index % 2 === 0 ? "left" : "right"}
+            delay={(index % 4) * 0.15}
+            className="journey-item"
+          >
             <div className="journey-year">
               {item.year}
             </div>
@@ -29,7 +35,7 @@ export default function Journey() {
 
               <p>{item.description}</p>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

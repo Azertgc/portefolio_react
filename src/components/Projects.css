@@ -326,7 +326,7 @@
 @media (max-width: 380px) {
 
   .projects-image-placeholder {
-    height: 200px;
+    height: 150px;
     padding: 12px;
     border-radius: 18px;
   }
@@ -334,6 +334,7 @@
   .projects-image-placeholder img {
     border-radius: 12px;
   }
+  
 }
 
 /* =========================

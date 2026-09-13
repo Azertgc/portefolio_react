@@ -32,7 +32,7 @@ export const greeting = {
   nickname: "Développeur Web Junior",
   subtitle:
     "Étudiant en L3 Techniques et Sciences de l'Informatique à l'UIST. Je construis des plateformes web avec Django et React.",
-  resumeLink: "#",
+  resumeLink: "/CV_Gonty_Tia_Ben_Emmanuel_Developpeur.pdf",
 };
 
 export const socialLinks = [
@@ -71,6 +71,8 @@ export const projects = [
     image: "/src/assets/images/uistg.png",
     description:
       "Application web de gestion des prestataires et des prestations pour l'UIST.",
+    presentation:
+      "UIST GESTION est mon projet de fin de cycle : une plateforme institutionnelle qui digitalise la gestion des prestataires externes de l'université (nettoyage, maintenance, événementiel...). Le projet part d'une analyse complète des besoins et d'une modélisation UML (cas d'utilisation, classes, séquence), avant le développement avec Django. Il gère quatre rôles utilisateurs distincts (direction, administration, informatique, prestataires), avec un système de mise en concurrence des offres basé sur une formule de score personnalisée, un calcul automatique du statut des prestations, la gestion documentaire et un journal d'événements pour la traçabilité.",
     stack: ["Django", "Python", "Tailwind CSS", "SQLite"],
     repo: "https://github.com/Azertgc/uist_gestion",
   },
@@ -83,6 +85,8 @@ export const projects = [
     image: "/src/assets/images/stackA.png",
     description:
       "Plateforme de services domestiques à Abidjan mettant en relation clients et prestataires.",
+    presentation:
+      "AVODAH est une marketplace web mettant en relation des familles abidjanaises avec des prestataires de services domestiques (ménage, garde d'enfants, cuisine, lessive). Développée avec Django, elle permet aux clients de publier des demandes, aux prestataires de faire des propositions, et intègre un système de négociation et d'expiration automatique des offres. C'est le tout premier grand projet de mon parcours, et son architecture a ensuite servi de base à UIST GESTION après une transformation complète de la logique métier.",
     stack: ["Django", "Python", "MySQL", "HTML/CSS"],
     repo: "https://github.com/Azertgc/avodah_plateforme_complete",
   },
@@ -95,6 +99,8 @@ export const projects = [
     image: "/src/assets/images/clinicyave.png",
     description:
       "Application de gestion médicale construite avec Vue 3, Vite et Tailwind CSS.",
+    presentation:
+      "ClinicYave est un tableau de bord médical développé en Vue 3 et Tailwind CSS, pensé pour le suivi quotidien d'un cabinet : vue d'ensemble des patients vus, des rendez-vous du jour et des consultations, liste des patients récents et alertes pour les cas urgents. L'interface met l'accent sur la lisibilité rapide des informations clés pour le personnel médical.",
     stack: ["Vue 3", "Vite", "Tailwind CSS", "JavaScript"],
     repo: "https://github.com/Azertgc/ClinicYave",
   },
@@ -107,6 +113,8 @@ export const projects = [
     image: "/src/assets/images/meteo.png",
     description:
       "Application météo Flutter permettant de rechercher une ville et d'afficher les conditions en temps réel, avec un thème visuel adaptatif.",
+    presentation:
+      "Application mobile Flutter connectée à l'API OpenWeather : l'utilisateur recherche une ville et obtient la température, le ressenti, l'humidité, le vent, la pression, la visibilité ainsi que les heures de lever et coucher du soleil. Le fond d'écran change dynamiquement de couleur selon la température et la condition météo (pluie, neige, orage, nuit), avec des transitions animées (fondu et glissement) à chaque nouvelle recherche.",
     stack: ["Flutter", "Dart"],
     repo: "https://github.com/Azertgc/flutter-app-meteo",
   },
@@ -119,6 +127,8 @@ export const projects = [
     image: "/src/assets/images/todo.png",
     description:
       "Application mobile de gestion de tâches, développée avec Ionic, Angular et Capacitor sur une architecture standalone.",
+    presentation:
+      "Application mobile de gestion de tâches construite avec Ionic et Angular (composants standalone) puis packagée avec Capacitor. Elle permet d'ajouter, modifier et supprimer des tâches via un formulaire dédié, avec une navigation typique d'application mobile entre l'écran de liste et l'écran d'ajout/modification.",
     stack: ["Ionic", "Angular", "TypeScript", "Capacitor"],
     repo: "https://github.com/Azertgc/ionic-todo-app",
   },
@@ -131,6 +141,8 @@ export const projects = [
     image: "/src/assets/images/flask.png",
     description:
       "Interface d'administration web développée avec Flask, HTML et CSS.",
+    presentation:
+      "Back-office développé avec Flask pour un cabinet médical fictif : authentification, gestion des médecins, des patients et des rendez-vous, avec un tableau de bord affichant les principaux indicateurs (nombre de médecins, de patients, de rendez-vous) et le suivi des rendez-vous récents. Un système de messages flash confirme chaque action (ajout, modification, suppression) à l'utilisateur.",
     stack: ["Flask", "Python", "HTML", "CSS"],
     repo: "https://github.com/Azertgc/Projet_flask_admin",
   },
@@ -141,8 +153,8 @@ export const projects = [
 // laquelle est active via un useState.
 export const themes = {
   nuit: { name: "Nuit", bg: "#141B26", panel: "#1B2432", text: "#EDE7DA", accent: "#D9A441", accent2: "#4E9E97" },
-  ocean: { name: "Océan", bg: "#EDF9FE", panel: "#FFFFFF", text: "#001C55", accent: "#0E6BA8", accent2: "#A6E1FA" },
-  foret: { name: "Forêt", bg: "#FFFFEB", panel: "#FFFFFF", text: "#003F2F", accent: "#55A630", accent2: "#dddf00" },
+  ocean: { name: "Océan", bg: "#EDF9FE", panel: "#FFFFFF", text: "#001C55", accent: "#0E6BA8", accent2: "#02b3ff" },
+  foret: { name: "Forêt", bg: "#FFFFEB", panel: "#FFFFFF", text: "#003F2F", accent: "#55A630", accent2: "#7e8000" },
 };
 
 export const stats = [

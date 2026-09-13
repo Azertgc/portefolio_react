@@ -13,6 +13,7 @@ import About from "./components/About";
 import SkillsAreas from "./components/SkillsAreas";
 import Journey from "./components/Journey";
 import Footer from "./components/Footer";
+import Reveal from "./components/Reveal";
 
 import AllProjects from "./pages/AllProjects";
 
@@ -39,30 +40,60 @@ export default function App() {
 
         <Routes>
 
-          {/* Page d'accueil */}
+          {/* =========================
+              PAGE D'ACCUEIL
+          ========================= */}
+
           <Route
             path="/"
             element={
               <>
                 <Hero />
-                <About />
-                <Stats />
-                <Skills />
-                <SkillsAreas />
-                <Journey />
-                <Projects />
-                <Contact />
-                <Footer />
+
+                <Reveal direction="bottom">
+                  <About />
+                </Reveal>
+
+                <Reveal direction="left">
+                  <Stats />
+                </Reveal>
+
+                <Reveal direction="right">
+                  <Skills />
+                </Reveal>
+
+                <Reveal direction="bottom">
+                  <SkillsAreas />
+                </Reveal>
+
+                <Reveal direction="left">
+                  <Journey />
+                </Reveal>
+
+                <Reveal direction="right">
+                  <Projects />
+                </Reveal>
+
+                <Reveal direction="bottom">
+                  <Contact />
+                </Reveal>
+
+                <Reveal direction="fade">
+                  <Footer />
+                </Reveal>
               </>
             }
           />
 
-          {/* Page Tous les projets */}
+          {/* =========================
+              PAGE TOUS LES PROJETS
+          ========================= */}
+
           <Route
             path="/projets"
             element={<AllProjects />}
           />
-     
+
         </Routes>
 
       </div>

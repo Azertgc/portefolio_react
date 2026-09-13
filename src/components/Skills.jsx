@@ -1,5 +1,6 @@
 import { skills } from "../data/portfolioData";
 import stack from "../assets/images/stack.png";
+import Reveal from "./Reveal";
 import "./Skills.css";
 
 export default function Skills() {
@@ -26,8 +27,13 @@ export default function Skills() {
           </p>
 
           <div className="skills-list">
-            {skills.map((skill) => (
-              <div key={skill.name} className="skill-card">
+            {skills.map((skill, index) => (
+              <Reveal
+                key={skill.name}
+                direction="bottom"
+                delay={(index % 6) * 0.1}
+                className="skill-card"
+              >
 
                 <img
                   src={skill.image}
@@ -37,7 +43,7 @@ export default function Skills() {
 
                 <span>{skill.name}</span>
 
-              </div>
+              </Reveal>
             ))}
           </div>
 

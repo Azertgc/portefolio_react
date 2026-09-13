@@ -10,34 +10,45 @@ export default function About() {
       </div>
 
       <div className="about-content">
-        <p className="section-label">À PROPOS</p>
 
-        <h2>Qui suis-je ?</h2>
+        {/* Carte 1 : Qui suis-je */}
+        <div className="about-card">
+          <p className="section-label">À PROPOS</p>
 
-        <p>
-          Je suis Gonty Tia Ben-Emmanuel, diplômé en Informatique, spécialisé dans le développement d'applications web et mobile. Je conçois des solutions web modernes en utilisant notamment Django, React et JavaScript.
-        </p>
+          <h2>Qui suis-je ?</h2>
 
-        <p>
-          Je m'intéresse particulièrement au développement web et à la
-          conception d'applications utiles, modernes et faciles à utiliser.
-        </p>
+          <p>
+            Je suis Gonty Tia Ben-Emmanuel, diplômé en Informatique, spécialisé dans le développement d'applications web et mobile. Je conçois des solutions web modernes en utilisant notamment Django, React et JavaScript.
+          </p>
 
-        <h3>Ma vision</h3>
+          <p>
+            Je m'intéresse particulièrement au développement web et à la
+            conception d'applications utiles, modernes et faciles à utiliser.
+          </p>
+        </div>
 
-        <p>
-          Mon objectif est de continuer à progresser dans le développement
-          logiciel et de concevoir des solutions qui répondent à de vrais
-          besoins.
-        </p>
+        {/* Carte 2 : Ma vision */}
+        <div className="about-card">
+          <h3>Ma vision</h3>
 
-        <h3>Mes objectifs</h3>
+          <p>
+            Mon objectif est de continuer à progresser dans le développement
+            logiciel et de concevoir des solutions qui répondent à de vrais
+            besoins.
+          </p>
+        </div>
 
-        <p>
-          Développer mes compétences en développement Full Stack, approfondir
-          React et Django et évoluer progressivement vers le métier
-          d'ingénieur logiciel.
-        </p>
+        {/* Carte 3 : Mes objectifs */}
+        <div className="about-card">
+          <h3>Mes objectifs</h3>
+
+          <p>
+            Développer mes compétences en développement Full Stack, approfondir
+            React et Django et évoluer progressivement vers le métier
+            d'ingénieur logiciel.
+          </p>
+        </div>
+
       </div>
 
     </section>

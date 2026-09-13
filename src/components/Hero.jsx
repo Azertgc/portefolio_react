@@ -1,6 +1,7 @@
 import { IconMapPin, IconArrowUpRight } from "./icons/Icons";
 import { greeting } from "../data/portfolioData";
 import SocialLinks from "./SocialLinks";
+import Reveal from "./Reveal";
 import "./Hero.css";
 import profil from "../assets/images/photo-profil.png";
 
@@ -9,7 +10,7 @@ export default function Hero() {
     <section className="hero container">
 
       {/* Partie gauche */}
-      <div className="hero-content">
+      <Reveal direction="left" className="hero-content">
 
         <p className="hero-location">
           <IconMapPin size={14} />
@@ -52,15 +53,15 @@ export default function Hero() {
 
         </div>
 
-      </div>
+      </Reveal>
 
       {/* Partie droite */}
-      <div className="hero-image">
+      <Reveal direction="right" delay={0.2} className="hero-image">
         <img
           src={profil}
           alt="Photo de profil"
         />
-      </div>
+      </Reveal>
 
     </section>
   );

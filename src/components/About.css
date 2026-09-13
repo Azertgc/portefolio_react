@@ -21,9 +21,16 @@
 
 }
 
-/* Texte */
+/* Texte : conteneur des 3 cartes */
 .about-content {
-  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Chaque carte séparée */
+.about-card {
+  padding: 30px 35px;
 
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -33,24 +40,35 @@
   -webkit-backdrop-filter: blur(12px);
 
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.about-content h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.about-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 
-.about-content h3 {
+.about-card h2 {
+  font-size: 1.9rem;
+  margin-bottom: 14px;
+}
+
+.about-card h3 {
   color: var(--accent);
-  margin-top: 25px;
-  margin-bottom: 8px;
+  margin: 0 0 8px;
 }
 
-.about-content p {
+.about-card p {
   color: var(--text);
   opacity: 0.75;
   line-height: 1.7;
-  margin-bottom: 15px;
+  margin: 0;
+}
+
+.about-card p + p {
+  margin-top: 15px;
 }
 
 @media (max-width: 768px) {
@@ -66,7 +84,7 @@
     display: none;
   }
 
-  .about-content {
-    padding: 25px;
+  .about-card {
+    padding: 22px 24px;
   }
 }

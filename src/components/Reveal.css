@@ -1,0 +1,33 @@
+/* =========================
+   REVEAL — animations au scroll
+   :where() donne une spécificité nulle à ces règles, pour que les
+   effets :hover déjà existants ailleurs (cartes, liens, boutons)
+   gardent toujours la priorité et ne soient jamais écrasés.
+========================= */
+
+:where(.reveal) {
+  opacity: 0;
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  will-change: opacity, transform;
+}
+
+:where(.reveal-bottom) {
+  transform: translateY(60px);
+}
+
+:where(.reveal-left) {
+  transform: translateX(-80px);
+}
+
+:where(.reveal-right) {
+  transform: translateX(80px);
+}
+
+:where(.reveal-fade) {
+  transform: none;
+}
+
+:where(.reveal-visible) {
+  opacity: 1;
+  transform: translate(0, 0);
+}

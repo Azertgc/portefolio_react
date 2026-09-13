@@ -23,6 +23,7 @@ export default function AllProjects() {
           <ProjectCard
             key={project.id}
             project={project}
+            showDescription
           />
         ))}
       </div>

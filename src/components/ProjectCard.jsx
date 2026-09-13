@@ -1,12 +1,10 @@
 import "./ProjectCard.css";
-import { Link } from "react-router-dom";
-import "./ProjectCard.css";
-
 
 export default function ProjectCard({
   project,
   onSelect,
-  isActive
+  isActive,
+  showDescription = false,
 }) {
   return (
     <article
@@ -30,7 +28,13 @@ export default function ProjectCard({
 
         <h3>{project.name}</h3>
 
-        
+        {/* La présentation complète n'apparaît que sur la page
+            "Voir plus de projets" (showDescription = true) */}
+        {showDescription && (
+          <p className="project-card-description">
+            {project.presentation || project.description}
+          </p>
+        )}
 
         {/* Technologies */}
         <div className="project-card-stack">
