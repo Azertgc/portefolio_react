@@ -13,6 +13,13 @@ import js_2 from "../assets/images/js_2.jpeg"
 import js from "../assets/images/js.jpeg"
 import python from "../assets/images/python.jpeg"
 import react from "../assets/images/react.jpeg"
+import flutter from "../assets/images/flutter.svg"
+import flask from "../assets/images/flask.svg"
+import ionic from "../assets/images/ionic.png"
+import java from "../assets/images/java.svg"
+import php from "../assets/images/php.svg"
+import bootstrap from "../assets/images/bootstrap.svg"
+import docker from "../assets/images/docker.svg"
 
 
 
@@ -21,18 +28,12 @@ import react from "../assets/images/react.jpeg"
 
 export const greeting = {
   name: "GONTY",
-
-  prenom: "Tia Ben-Emmanuel",
-
+  prenom:"Tia Ben-Emmanuel",
   nickname: "Développeur Web Junior",
-
   subtitle:
-    "Développeur web passionné par la création d'applications modernes, fonctionnelles et intuitives. Je conçois des solutions web avec Django, React et JavaScript, en mettant l'accent sur la qualité, la simplicité et l'expérience utilisateur.",
-
+    "Étudiant en L3 Techniques et Sciences de l'Informatique à l'UIST. Je construis des plateformes web avec Django et React.",
   resumeLink: "#",
 };
-
-
 
 export const socialLinks = [
   { name: "GitHub", url: "https://github.com/Azertgc" },
@@ -42,13 +43,19 @@ export const socialLinks = [
 
 export const skills = [
   { name: "Python", image: python },
+  //{ name: "Java", image: java },
+  { name: "PHP", image: php },
   { name: "Django", image: django },
+  { name: "Flask", image: flask },
   { name: "React", image: react },
-  //{ name: "React Native", image: reactImg }, // Réutilisation de l'image React
-  { name: "JavaScript", image:js_2 }, // Autre possibilité (si dossier public)
-  //{ name: "Tailwind CSS", image: css },
-  { name: "SQLite / PostgreSQL", image: bd },
-  //{ name: "UML & MERISE", image:uml},
+  { name: "Flutter / Dart", image: flutter },
+  { name: "Ionic / Angular", image: ionic },
+  { name: "JavaScript / TypeScript", image: js_2 },
+  { name: "HTML / CSS", image: html },
+  { name: "Bootstrap", image: bootstrap },
+  { name: "SQLite / MySQL / MariaDB / PostgreSQL", image: bd },
+  { name: "Docker", image: docker },
+  //{ name: "UML / StarUML", image: uml },
   { name: "Git", image: git },
 ];
 
@@ -144,11 +151,11 @@ export const stats = [
     label: "Informatique",
   },
   {
-    value: "3",
+    value: "6",
     label: "Projets réalisés",
   },
   {
-    value: "8",
+    value: "15",
     label: "Technologies",
   },
   {
@@ -202,32 +209,38 @@ export const expertise = [
 export const journey = [
   {
     year: "2023",
-    title: "Début dans le développement",
+    title: "Baccalauréat série D",
     description:
-      "Découverte de la programmation et développement de mes premières applications web.",
+      "Obtention du Baccalauréat au Lycée Moderne LYMAS, point de départ vers des études supérieures en informatique.",
   },
   {
     year: "2023 — 2024",
-    title: "AVODAH",
+    title: "Entrée à l'UIST — AVODAH",
     description:
-      "Conception d'une plateforme web de mise en relation entre clients et prestataires de services.",
+      "Début de la Licence Développement d'Applications Web et Mobile (DAWM) à l'UIST. Premier grand projet : AVODAH, une plateforme Django de mise en relation entre clients et prestataires de services à Abidjan.",
   },
   {
     year: "2024 — 2025",
-    title: "UIST GESTION",
+    title: "Diversification technique",
     description:
-      "Conception et réalisation d'une application web de gestion des prestataires et des prestations pour l'UIST.",
+      "Exploration de plusieurs stacks au-delà de Django : Flask (panel d'administration médicale), Flutter/Dart (application météo), Ionic/Angular (application de tâches). Programme L3 TCSI, année académique 2024–2025.",
   },
   {
-    year: "2025 — 2026",
-    title: "Développement Full Stack",
+    year: "2024 — 2026",
+    title: "UIST GESTION — Projet de fin de cycle",
     description:
-      "Approfondissement de Python, Django, JavaScript, React, bases de données, Git et déploiement.",
+      "Analyse des besoins, modélisation UML (cas d'utilisation, classes, séquence) et développement avec Django d'une plateforme de gestion des prestataires et des prestations de services pour l'UIST, de la conception à la mise en œuvre.",
+  },
+  {
+    year: "2026",
+    title: "Licence DAWM obtenue",
+    description:
+      "Licence en Informatique — Développement d'Applications Web et Mobile, Université Internationale des Sciences et Technologies (UIST), Abidjan.",
   },
   {
     year: "Aujourd'hui",
     title: "Développeur Web Junior",
     description:
-      "Je continue à développer mes compétences en développement Full Stack et à construire des projets personnels.",
+      "À la recherche d'une opportunité pour mettre mes compétences au service de projets concrets et poursuivre mon développement professionnel.",
   },
 ];
