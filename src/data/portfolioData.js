@@ -23,6 +23,13 @@ import docker from "../assets/images/docker.svg"
 
 
 
+import uistgImg from "../assets/images/uistg.png"
+import avodahImg from "../assets/images/stackA.png"
+import clinicyaveImg from "../assets/images/clinicyave.png"
+import meteoImg from "../assets/images/meteo.png"
+import todoImg from "../assets/images/todo.png"
+import flaskAdminImg from "../assets/images/flask.png"
+
 
 
 
@@ -68,7 +75,7 @@ export const projects = [
     name: "UIST GESTION",
     tag: "Projet de fin de cycle",
     period: "2024 — 2025",
-    image: "/src/assets/images/uistg.png",
+    image: uistgImg,
     description:
       "Application web de gestion des prestataires et des prestations pour l'UIST.",
     presentation:
@@ -82,7 +89,7 @@ export const projects = [
     name: "AVODAH",
     tag: "Marketplace de services",
     period: "2023 — 2024",
-    image: "/src/assets/images/stackA.png",
+    image: avodahImg,
     description:
       "Plateforme de services domestiques à Abidjan mettant en relation clients et prestataires.",
     presentation:
@@ -96,7 +103,7 @@ export const projects = [
     name: "ClinicYave",
     tag: "Application médicale",
     period: "2025 — 2026",
-    image: "/src/assets/images/clinicyave.png",
+    image: clinicyaveImg,
     description:
       "Application de gestion médicale construite avec Vue 3, Vite et Tailwind CSS.",
     presentation:
@@ -110,7 +117,7 @@ export const projects = [
     name: "Météo App",
     tag: "Application mobile",
     period: "2025 — 2026",
-    image: "/src/assets/images/meteo.png",
+    image: meteoImg,
     description:
       "Application météo Flutter permettant de rechercher une ville et d'afficher les conditions en temps réel, avec un thème visuel adaptatif.",
     presentation:
@@ -124,7 +131,7 @@ export const projects = [
     name: "Ionic Todo App",
     tag: "Application mobile",
     period: "2025 — 2026",
-    image: "/src/assets/images/todo.png",
+    image: todoImg,
     description:
       "Application mobile de gestion de tâches, développée avec Ionic, Angular et Capacitor sur une architecture standalone.",
     presentation:
@@ -138,7 +145,7 @@ export const projects = [
     name: "Flask Admin",
     tag: "Panel d'administration",
     period: "2025",
-    image: "/src/assets/images/flask.png",
+    image: flaskAdminImg,
     description:
       "Interface d'administration web développée avec Flask, HTML et CSS.",
     presentation:
