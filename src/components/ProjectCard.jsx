@@ -1,4 +1,5 @@
 import "./ProjectCard.css";
+import { IconGithub } from "./icons/Icons";
 
 export default function ProjectCard({
   project,
@@ -45,10 +46,22 @@ export default function ProjectCard({
           ))}
         </div>
 
+        {/* Lien GitHub */}
+        {project.repo && (
+          <a
+            href={project.repo}
+            target="_blank"
+            rel="noreferrer"
+            className="project-card-repo"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <IconGithub size={15} />
+            Voir sur GitHub
+          </a>
+        )}
+
       </div>
       <hr />
     </article>
   );
 }
-
-/* ajout de lien git apres*/

@@ -44,7 +44,7 @@ export const greeting = {
 
 export const socialLinks = [
   { name: "GitHub", url: "https://github.com/Azertgc" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/ton-profil" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/tia-ben-emmanuel-gonty-220ab4238" },
   { name: "Email", url: "mailto:gontben3@gmail.com" },
 ];
 

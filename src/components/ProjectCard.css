@@ -126,6 +126,40 @@
   opacity: 0.8;
 }
 
+/* Lien GitHub */
+
+.project-card-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-top: 12px;
+
+  padding: 6px 12px;
+
+  width: fit-content;
+
+  color: var(--text);
+  text-decoration: none;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.project-card-repo:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
 .project-card hr {
   position: absolute;
   bottom: 0;
